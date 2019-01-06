@@ -5,8 +5,7 @@ namespace Algorithm.Inheritance
 {
     public class AveragingAggregator : PointsAggregator
     {
-        public AveragingAggregator(IEnumerable<Measurement> measurements)
-            : base(measurements)
+        public AveragingAggregator(IEnumerable<Measurement> measurements) : base(measurements)
         {
         }
 
