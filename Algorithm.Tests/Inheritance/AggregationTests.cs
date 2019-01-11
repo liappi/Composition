@@ -51,7 +51,7 @@ namespace Algorithm.Tests.Inheritance
             Assert.Equal(15, result.Y);
         }
 
-        Measurement[] _measurements = new[]
+        Measurement[] _measurements = 
         {
             new Measurement { X = 5, Y = 10},
             new Measurement { X = 2, Y = 15},
