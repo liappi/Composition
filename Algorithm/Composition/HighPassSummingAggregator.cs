@@ -6,20 +6,14 @@ namespace Algorithm.Composition
     {
         public HighPassSummingAggregator(IEnumerable<Measurement> measurements)
         {
-            _measurements = measurements;
-            _filter = new HighPassFilter();
-            _aggregator = new SummingStrategy();
+            _pointsAggregator = new PointsAggregator(measurements, new HighPassFilter(), new SummingStrategy());
         }
         
         public virtual Measurement Aggregate()
         {
-            var measurements = _measurements;
-            measurements = _filter.Filter(measurements);            
-            return _aggregator.Aggregate(measurements);
+            return _pointsAggregator.Aggregate();
         }
 
-        private readonly IEnumerable<Measurement> _measurements;
-        private readonly IMeasurementFilter _filter;
-        private readonly IAggregationStrategy _aggregator;
+        private PointsAggregator _pointsAggregator;
     }
 }
